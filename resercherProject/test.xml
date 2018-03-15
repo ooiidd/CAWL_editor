@@ -1,0 +1,89 @@
+	<flow name="MainFlow">
+		<source name="Source"/>
+		<node name="MorningMsg"state="deActivate">
+			<condition expression="C2">
+				<context name="C2">
+					<constraint name="C2">
+						<subject type="SubjectType">Subject</subject>
+						<object type="ObjectType">Object</object>
+					</constraint>
+				</context>
+			</condition>
+		</node>
+		<node name="EntireReport"state="deActivate">
+			<condition expression="C3">
+				<context name="C3">
+					<constraint name="C3">
+						<subject type="SubjectType">Subject</subject>
+						<object type="ObjectType">Object</object>
+					</constraint>
+				</context>
+			</condition>
+		</node>
+		<node name="Emergency"state="deActivate">
+			<condition expression="C4">
+				<context name="C4">
+					<constraint name="C4">
+						<subject type="SubjectType">Subject</subject>
+						<object type="ObjectType">Object</object>
+					</constraint>
+				</context>
+			</condition>
+		</node>
+		<node name="CallingRobot"state="deActivate">
+			<wait joinCondition="JustMove"/>
+			<condition expression="C6">
+				<context name="C6">
+					<constraint name="C6">
+						<subject type="SubjectType">Subject</subject>
+						<object type="ObjectType">Object</object>
+					</constraint>
+				</context>
+			</condition>
+		</node>
+		<node name="JustMove"state="deActivate">
+			<condition expression="C5">
+				<context name="C5">
+					<constraint name="C5">
+						<subject type="SubjectType">Subject</subject>
+						<object type="ObjectType">Object</object>
+					</constraint>
+				</context>
+			</condition>
+		</node>
+		<sink name="Sink"/>
+		<link from="Source" to="MorningMsg"/>
+		<link from="MorningMsg" to="EntireReport"/>
+		<link from="EntireReport" to="Emergency"/>
+		<link from="EntireReport" to="JustMove"/>
+		<link from="JustMove" to="CallingRobot"/>
+		<link from="CallingRobot" to="Sink"/>
+	</flow>
+	<flow name="SubFlow">
+		<source name="SubSource"/>
+		<node name="SubMorningMsg1"state="deActivate">
+			<condition expression="C7">
+				<context name="C7">
+					<constraint name="C7">
+						<subject type="SubjectType">Subject</subject>
+						<object type="ObjectType">Object</object>
+					</constraint>
+				</context>
+			</condition>
+		</node>
+		<node name="SubMorningMsg2"state="deActivate">
+			<condition expression="C8">
+				<context name="C8">
+					<constraint name="C8">
+						<subject type="SubjectType">Subject</subject>
+						<object type="ObjectType">Object</object>
+					</constraint>
+				</context>
+			</condition>
+		</node>
+		<sink name="SubSink"/>
+		<link from="SubSource" to="SubMorningMsg1"/>
+		<link from="SubMorningMsg1" to="SubMorningMsg2"/>
+		<link from="SubMorningMsg2" to="SubSink"/>
+	</flow>
+</CAWL>

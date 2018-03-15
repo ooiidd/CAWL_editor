@@ -1,0 +1,136 @@
+html, body{
+	height: 100%;
+}
+html {
+	line-height: 1.5;
+	font-size: 15px;
+	font-weight: 400;
+}
+body{
+	color: black;
+}
+* {
+	box-sizing: border-box;
+	margin: 0px;
+	padding: 0px;
+}
+body{
+	display: flex;
+	flex-direction: column;
+}
+.container{
+	flex-direction: column;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: flex;
+}
+.top-boxes{
+	width: 100%;
+	height: 350px;
+	min-height:125px;
+	flex-shrink: 0;
+	position: relative;
+	display: flex;
+	color: white;
+}
+.resizer{
+	flex-shrink: 0;
+	box-shadow: black 0px 0px 1px;
+	height: 13px;
+	cursor: row-resize;
+	position: relative;
+	z-index: 10;
+	background: rgb(52,52,54);
+	border-bottom: 1px solid black;
+}
+.width-readout{
+	left:50%;
+	top:50%;
+	paddig:4px 8px;
+	position:absolute;
+	z-index: 50;
+	color: rgb(51,51,51);
+	font-size:9px;
+	transform: translate(-50%,-50%);
+	box-shadow: rgba(0,0,0,0.5) 0px 1px 1px;
+	opacity: 0;
+	visibility: hidden;
+	background: rgb(238,238,238);
+	border-radius:10px;
+	transition: opacity 0.1s;
+}
+.output-container{
+	flex-direction: row;
+	flex-grow: 1;
+	position: relative;
+	display:flex;
+}
+.attribute_control{
+	position:relative;
+	width:300px;
+}
+.attribute_control div{
+	padding: 0px 0px 2px 0px;
+}
+.svg_div{
+	overflow: scroll;
+	position:relative;
+	width:100%;
+	flex-grow:1;
+}
+.textarea{
+	height: 100%;
+	width: 100%;
+}
+.btn-group{
+	width:100%;
+	height:48px;
+	background-color:#ccffcc;
+	display:inline;
+}
+.btn{
+	background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline;
+    font-size: 16px;
+}
+p{
+	display:inline;	
+}
+.dragbox{
+	position: absolute;
+	top: 50px;
+    left: 109px;
+    border: 1px solid rgb(119, 136, 153);
+    width: 150px;
+    height: 90px;
+    background: rgb(152, 143, 130);
+    cursor: move;
+}
+form{
+	width: 100%;
+	height: 100%;
+	flex-direction: column;
+	position: absolute;
+	display:flex;
+}
+g{
+	cursor: move;
+}
+svg{
+	width: 100%;
+    height: 100%;
+    display: block;
+    min-width: 2285px;
+    min-height: 2549px;
+    position: absolute;
+    background-image: none;
+}
+li{
+	font-size:16px;
+}

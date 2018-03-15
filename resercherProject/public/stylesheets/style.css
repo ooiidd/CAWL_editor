@@ -1,0 +1,31 @@
+html{
+	height: 95%;
+}
+body {
+  padding: 1px;
+  height: 100%;
+  border:3px solid;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+.verticalLine{
+	border-left: thick solid #ff0000;
+}
+a {
+  color: #00B7FF;
+}
+.tt{
+	height:100%;
+	width:100%;
+}
+.diagramArea{
+	float: left;
+	height: 100%;
+	width: 50%;
+	background-color: powderblue;
+}
+.textArea{
+	float: left;
+	height: 100%;
+	width: 50%;
+	background-color: powderblue;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title><%= title %></title>
+    <script>
+    	var flow =<%-JSON.stringify(flow)%>;
+    	var nodelist =<%-JSON.stringify(node)%>;
+    	var flowname =<%-JSON.stringify(flownamearr)%>;
+    </script>
+    <link rel='stylesheet' href='/stylesheets/newstyle.css' />
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+  	<script src="js/buttonclick.js"></script>
+  </head>
+  <body>
+  	<div class="container">
+  		<form name="super_form" action="/xmlparse" method="post">
+  		<div class="top-boxes">
+  			
+  			<textarea name="textarea" class="textarea" ondrop="drop_handler(event);" 
+    		 ondragover="dragover_handler(event);"><%=xml%></textarea>
+  		</div>
+  		<div id="resizer" class="resizer" ondragstart="drag_handler(event)"
+  		 ondrag="drag_handler(event)">
+  			<span></span>
+  			<div id="width-readout" class="width-readout" >999px</div>
+  		</div>
+  		<div class="btn-group">
+  			<button id="convert" class="btn" type="submit">Convert</button>
+  			<button id="addrect" class="btn" type="button">AddBox</button>
+  			<button id="toxml" class="btn" type="button" onclick="toxmlf()">To XML</button>
+  		</div>
+  		<div class="output-container" id="test3">
+  			<div class="svg_div">
+  				<p><%=text%></p>
+  				<svg name="svg" id="svg">
+	  			</svg>
+	  		</div>
+	  		<input type="hidden" name="svgtext" id="svgtext" value="testhidden">
+	  		<div class="attribute_control" id="attr">
+	  		</div>
+  		</div>
+  		</form>
+  	</div>
+  	<script src="js/snap.svg-min.js"></script>
+    <script src="js/drag.js"></script>
+    <script src="js/svgcontroll.js"></script>
+  </body>
+</html>
